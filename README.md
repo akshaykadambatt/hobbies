@@ -19,52 +19,81 @@ Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ## Directory Structure
 
-HOBBIES/
-├── app/
-│   ├── api/
-│   │   ├── auth/
-│   │   │   ├── signup/
-│   │   │   │   └── route.ts
-│   │   │   └── login/
-│   │   │       └── route.ts
-│   │   ├── collections/
-│   │   │   ├── [collectionId]/
-│   │   │   │   ├── items/
-│   │   │   │   │   ├── [itemId]/
-│   │   │   │   │   │   └── route.ts
-│   │   │   │   │   └── route.ts
-│   │   │   │   └── route.ts
-│   │   │   └── route.ts
-│   │   └── protected/
-│   │       └── route.ts
-│   ├── components/
-│   │   ├── Layout.tsx
-│   │   ├── ProtectedRoute.tsx
-│   │   ├── CollectionList.tsx
-│   │   ├── CollectionDetails.tsx
-│   │   ├── ItemList.tsx
-│   │   ├── ItemDetails.tsx
-│   │   └── ItemForm.tsx
-│   ├── lib/
-│   │   ├── auth.ts
-│   │   └── mongodb.ts
-│   ├── signup/
-│   │   └── page.tsx
-│   ├── login/
-│   │   └── page.tsx
-│   ├── profile/
-│   │   └── page.tsx
-│   ├── collections/
-│   │   ├── [collectionId]/
-│   │   │   ├── page.tsx
-│   │   │   ├── items/
-│   │   │   │   ├── [itemId]/
-│   │   │   │   │   └── page.tsx
-│   │   │   │   └── page.tsx
-│   │   │   └── layout.tsx
-│   │   └── page.tsx
-│   └── layout.tsx
-├── package.json
-├── next.config.js
-├── tsconfig.json
+HOBBIES/\
+
+├── app/\
+│   ├── api/\
+│   │   ├── auth/\
+│   │   │   ├── signup/\
+│   │   │   │   └── route.ts\
+│   │   │   └── login/\
+│   │   │       └── route.ts\
+│   │   ├── collections/\
+│   │   │   ├── [collectionId]/\
+│   │   │   │   ├── items/\
+│   │   │   │   │   ├── [itemId]/\
+│   │   │   │   │   │   └── route.ts\
+│   │   │   │   │   └── route.ts\
+│   │   │   │   └── route.ts\
+│   │   │   └── route.ts\
+│   │   └── protected/\
+│   │       └── route.ts\
+│   ├── components/\
+│   │   ├── Layout.tsx\
+│   │   ├── ProtectedRoute.tsx\
+│   │   ├── CollectionList.tsx\
+│   │   ├── CollectionDetails.tsx\
+│   │   ├── ItemList.tsx\
+│   │   ├── ItemDetails.tsx\
+│   │   └── ItemForm.tsx\
+│   ├── lib/\
+│   │   ├── auth.ts\
+│   │   └── mongodb.ts\
+│   ├── signup/\
+│   │   └── page.tsx\
+│   ├── login/\
+│   │   └── page.tsx\
+│   ├── profile/\
+│   │   └── page.tsx\
+│   ├── collections/\
+│   │   ├── [collectionId]/\
+│   │   │   ├── page.tsx\
+│   │   │   ├── items/\
+│   │   │   │   ├── [itemId]/\
+│   │   │   │   │   └── page.tsx\
+│   │   │   │   └── page.tsx\
+│   │   │   └── layout.tsx\
+│   │   └── page.tsx\
+│   └── layout.tsx\
+├── package.json\
+├── next.config.js\
+├── tsconfig.json\
 └── README.md
+
+## Architecture
+
+User\
+-Organizations (Collection of Collections)\
+-- Collections (Collection of Pages)\
+--- Pages (Basic unit of UI)\
+---- Note component (For notetaking (RTE))\
+---- Link component (For saving a list of links)\
+---- Todo component (Checkboxes and text based on date)\
+---- Calendar component (Date focused component)\
+---- List component (Infinite list of items with columns of user choice (date based)) \
+---- Functions component (Summarize other components)\
+---- File uploading component (Save files)
+
+## Tasks
+
+🟩 Install NextJS <br/> 
+🟩 Install MongoDB <br/> 
+🟩 Connect MongoDB <br/> 
+🟩 Create Architecture <br/> 
+⬛ Connect to Firebase <br/> 
+⬛ Integrate Firebase Auth <br/> 
+⬛ Integrate Firebase Storage <br/> 
+⬛ Convert app to PWA (Serwist) <br/> 
+⬛ Control what pages to cache <br/> 
+🟩 Install idb-keyval <br/> 
+⬛ Design IndexDB datastore
