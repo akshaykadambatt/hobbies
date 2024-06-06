@@ -97,3 +97,7 @@ User\
 ⬛ Control what pages to cache <br/> 
 🟩 Install idb-keyval <br/> 
 ⬛ Design IndexDB datastore
+
+## Design
+
+Design file: [Figma File](https://www.figma.com/design/vosBdzNrEM6z69rP4GZ5MZ/Hobbies?m=auto&t=g3extYoU2vysZGDY-6)
