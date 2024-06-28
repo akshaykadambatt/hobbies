@@ -1,3 +1,4 @@
+import { User } from "next-auth";
 import { Content } from "./content";
 
 export interface Body {
@@ -15,4 +16,5 @@ export interface Body {
       */
     createdAt: Date;
     updatedAt: Date;
+    owner: string | User;
   }

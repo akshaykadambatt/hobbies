@@ -1,5 +1,6 @@
 import { Collection } from "./collection";
 import { Page } from "./page";
+import { User } from "./user";
 
 export interface Board {
     id: string;
@@ -12,4 +13,5 @@ export interface Board {
     public: boolean; //false by default, if true copy link to share
     createdAt: Date;
     updatedAt: Date;
+    owner: string | User;
   }
