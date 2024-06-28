@@ -91,12 +91,17 @@ User\
 🟩 Connect MongoDB <br/> 
 🟩 Create Architecture <br/> 
 ⬛ Connect to Firebase <br/> 
-⬛ Integrate Firebase Auth <br/> 
+🟩 Integrate Firebase Auth <br/> 
 ⬛ Integrate Firebase Storage <br/> 
-⬛ Convert app to PWA (Serwist) <br/> 
-⬛ Control what pages to cache <br/> 
+🟩 Convert app to PWA (Serwist) <br/> 
+🟩 Control what pages to cache <br/> 
 🟩 Install idb-keyval <br/> 
 ⬛ Design IndexDB datastore
+⬛ Create a redux store <br/> 
+⬛ Create APIs <br/> 
+⬛ Test database and sync <br/> 
+⬛ Create routes <br/> 
+⬛ Create components <br/> 
 
 ## Design
 
