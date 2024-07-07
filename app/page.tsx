@@ -1,4 +1,6 @@
 import { signIn, auth, signOut } from "@/auth";
+import { setUser } from './store/userSlice';
+import { useDispatch } from 'react-redux';
 
 function SignIn() {
   return (

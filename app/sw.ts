@@ -22,4 +22,16 @@ const serwist = new Serwist({
   runtimeCaching: defaultCache,
 });
 
+self.addEventListener('fetch', (event) => {
+  if (event.preloadResponse) {
+    event.respondWith(
+      (async () => {
+        const preloadResponse = await event.preloadResponse;
+        await new Promise(resolve => setTimeout(resolve, 100)); // Introduce a small delay
+        return preloadResponse || fetch(event.request);
+      })()
+    );
+  }
+});
+
 serwist.addEventListeners();
