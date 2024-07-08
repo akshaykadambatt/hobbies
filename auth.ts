@@ -22,13 +22,11 @@ export const {
   })],
   callbacks: {
     async session({ session, token }) {
-      console.log(session, token.sub)
       if (token.sub) {
         session.user.id = token.sub.toString();
       }
       return session
     },
   },
-  
   secret: "secret",
 });

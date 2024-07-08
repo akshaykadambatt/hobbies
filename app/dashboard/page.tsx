@@ -8,24 +8,21 @@ import db, { UserData } from '../store/db';
 const Dashboard: React.FC = () => {
   const { data: session, status } = useSession()
   const [userData, setUserData] = useState<UserData | null>(null);
-  console.log(session,userData)
   useEffect(() => {
     const loadUserData = async () => {
-      if (session?.user && typeof session.user.id === 'string') {
-        const storedUserData = await db.users.get(session.user.id);
-        setUserData(storedUserData || null);
-      } else {
-        setUserData(null);
-      }
+      const storedUserData = await db.users.get('1');
+      setUserData(storedUserData || null);
+      console.log("loaded from local",session,storedUserData)
     };
 
     loadUserData();
-  }, [session]);
+
+  }, []);
 
   useEffect(() => {
     if (session?.user) {
       const userData: UserData = {
-        id: session.user.id || '',
+        id: '1', //Removed session.user.id || '' (for fast dexie query)
         name: session.user.name || '',
         email: session.user.email || '',
         image: session.user.image || '',
@@ -33,6 +30,8 @@ const Dashboard: React.FC = () => {
       };
 
       db.users.put(userData);
+      console.log("loaded from server",session,userData)
+
     }
   }, [session]);
   return (
