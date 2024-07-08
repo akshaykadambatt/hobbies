@@ -8,7 +8,7 @@ export interface UserData {
   // Add other user data properties as needed
 }
 
-class MyDexieDB extends Dexie {
+export class MyDexieDB extends Dexie {
   users!: Table<UserData>;
 
   constructor() {

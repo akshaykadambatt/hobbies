@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
 import ClientWrapper from "../store/ClientWrapper";
-
+import User from "../../components/User"
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +15,8 @@ export default async function RootLayout({
 }>) {
   return (
     <ClientProvider>
-      <div>Logged in{children}</div>
+      Header <User />
+      <main>{children}</main>
     </ClientProvider>
   );
 }
