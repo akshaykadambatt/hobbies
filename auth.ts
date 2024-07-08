@@ -1,3 +1,4 @@
+import { log } from "console";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import GoogleProvider from "next-auth/providers/google";
@@ -20,10 +21,14 @@ export const {
     }
   })],
   callbacks: {
-    async jwt({ token }) {
-      token.userRole = "admin"
-      return token
+    async session({ session, token }) {
+      console.log(session, token.sub)
+      if (token.sub) {
+        session.user.id = token.sub.toString();
+      }
+      return session
     },
   },
+  
   secret: "secret",
 });
