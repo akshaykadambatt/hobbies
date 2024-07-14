@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Provider } from "react-redux";
 import store from "./store/store";
-
+import { useEffect } from "react";
+import { Serwist } from "serwist";
 const inter = Inter({ subsets: ["latin"] });
 
 const APP_NAME = "Hobbies";
@@ -13,6 +14,7 @@ const APP_DESCRIPTION = "The daily log of your hobbies";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
+  manifest:"/manifest.webmanifest",
   title: {
     default: APP_DEFAULT_TITLE,
     template: APP_TITLE_TEMPLATE,
@@ -58,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
+      
       <body className={inter.className}>
         {children}
       </body>
