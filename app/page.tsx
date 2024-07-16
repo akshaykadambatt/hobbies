@@ -1,6 +1,9 @@
 import { signIn, auth, signOut } from "@/auth";
-import { setUser } from './store/userSlice';
-import { useDispatch } from 'react-redux';
+import { setUser } from "./store/userSlice";
+import { useDispatch } from "react-redux";
+import { redirect } from "next/navigation";
+import { getDexieUser, setDexieUser } from "@/utils/dexieUtils";
+import { useEffect } from "react";
 
 function SignIn() {
   return (
@@ -34,10 +37,12 @@ export default async function Page() {
   let session = await auth();
   let user = session?.user?.email;
   console.log(session);
-  
+  if (user) {
+    redirect("/dashboard");
+  }
   return (
     <section>
-      <h1>Home</h1>
+      <h1>Homeewe</h1>
       <div>{user ? <SignOut>{`Welcome ${user}`}</SignOut> : <SignIn />}</div>
     </section>
   );

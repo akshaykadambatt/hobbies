@@ -1,12 +1,17 @@
-import React from "react";
+"use client"
 
-const Organization: React.FC = () => {
+import React, { useEffect, useState } from "react";
+import { useSelector } from 'react-redux';
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+const Dashboard: React.FC = () => {
+  
   return (
-    <div>
-      Organization
-      - List of pages within collections.
-    </div>
+    <div className="page">
+      This is the organization content.
+      <Link href="/dashboard">back</Link>
+      </div>
   );
 };
 
-export default Organization;
+export default Dashboard;

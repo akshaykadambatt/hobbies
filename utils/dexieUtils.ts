@@ -1,14 +1,14 @@
 import db, { UserData, MyDexieDB } from '../app/store/db';
 import Dexie, { Table } from 'dexie';
 
-export const getUser = async (id: string) => {
+export const getDexieUser = async (id: string) => {
   const userData = await fetchData<UserData, string>('users', id);
   //if no hit, check mongodb and call set
   //get user from mongodb as well and if changes exist merge with dexie again
   return userData;
 };
 
-export const setUser = async (data: UserData) => {
+export const setDexieUser = async (data: UserData) => {
   const userData = await createData<UserData, string>('users', data.id, data);
   //do in mongodb as well
   return userData;

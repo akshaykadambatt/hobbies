@@ -26,19 +26,8 @@ const serwist = new Serwist({
       handler: new CacheFirst(),
     },
     {
-      matcher: /^https:\/\/api\.yourdomain\.com\/.*/i,
-      handler: new NetworkFirst(),
-    },
-    {
       matcher: /.*/,
       handler: new NetworkFirst(),
-    },
-    {
-      matcher({ request }) {
-        return true
-      },
-      handler: new CacheFirst({
-      }),
     }
   ],
 });

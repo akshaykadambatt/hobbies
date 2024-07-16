@@ -7,7 +7,8 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
 import ClientWrapper from "../store/ClientWrapper";
-import User from "../../components/User"
+import User from "../../components/User";
+import Image from "next/image";
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +16,12 @@ export default async function RootLayout({
 }>) {
   return (
     <ClientProvider>
-      Header <User />
+      <Image src="/icons/android-chrome-144x144.png" priority alt="logo" width={100} height={100} />
+      Name
+      <input type="text" placeholder="Search" />
+      <User />
+      Hamburger Menu
+       
       <main>{children}</main>
     </ClientProvider>
   );
