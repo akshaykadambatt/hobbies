@@ -9,6 +9,8 @@ const Dashboard: React.FC = () => {
   return (
     <div className="page">
       This is the organization content.
+      list all pages here.aaaa
+
       <Link href="/dashboard">back</Link>
       </div>
   );

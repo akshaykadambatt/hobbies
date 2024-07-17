@@ -7,7 +7,6 @@ import {
   StaleWhileRevalidate,
 } from "serwist";
 import { defaultCache } from "@serwist/next/worker";
-
 declare global {
   interface WorkerGlobalScope extends SerwistGlobalConfig {
     __SW_MANIFEST: (PrecacheEntry | string)[] | undefined;
@@ -28,11 +27,15 @@ const serwist = new Serwist({
       handler: new CacheFirst(),
     },
     {
-      matcher: /\.(?:js|css|webp|png|jpg|jpeg|svg|gif)$/i,
+      matcher: /\.(?:webp|png|jpg|jpeg|svg|gif)$/i,
       handler: new CacheFirst(),
     },
     {
-      matcher: /^https:\/\/api\.yourdomain\.com\/.*/i,
+      matcher: /\.(?:js|css)$/i,
+      handler: new NetworkFirst(),
+    },
+    {
+      matcher: /^https:\/\/api\.hobbies1\.com\/.*/i,
       handler: new NetworkFirst(),
     },
     {

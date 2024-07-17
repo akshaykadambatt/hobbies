@@ -4,6 +4,7 @@ const Page: React.FC = () => {
   return (
     <div>
       Page
+      list all elements here
     </div>
   );
 };
