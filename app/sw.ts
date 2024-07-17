@@ -1,5 +1,11 @@
 import type { PrecacheEntry, SerwistGlobalConfig } from "serwist";
-import { CacheableResponsePlugin, CacheFirst, NetworkFirst, Serwist } from "serwist";
+import {
+  CacheableResponsePlugin,
+  CacheFirst,
+  NetworkFirst,
+  Serwist,
+  StaleWhileRevalidate,
+} from "serwist";
 import { defaultCache } from "@serwist/next/worker";
 
 declare global {
@@ -26,27 +32,23 @@ const serwist = new Serwist({
       handler: new CacheFirst(),
     },
     {
+      matcher: /^https:\/\/api\.yourdomain\.com\/.*/i,
+      handler: new NetworkFirst(),
+    },
+    {
       matcher: /.*/,
       handler: new NetworkFirst(),
     }
   ],
 });
-self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResponse = await event.preloadResponse;
-        if (preloadResponse) {
-          return preloadResponse;
-        }
+const swr = new NetworkFirst();
 
-        const networkResponse = await fetch(event.request);
-        return networkResponse;
-      } catch (error) {
-        // Handle errors
-      }
-    })());
+self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  if (url.origin === location.origin && url.pathname === "/") {
+    event.respondWith(swr.handle({ event, request }));
   }
 });
-
 serwist.addEventListeners();
