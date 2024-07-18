@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+const plugin = require('tailwindcss/plugin')
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,6 +15,22 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ matchUtilities, theme }: { matchUtilities: any; theme: any }) => {
+      matchUtilities(
+        {
+          "animation-delay": (value: any) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        }
+      );
+    }),
+  ],
 };
+
 export default config;

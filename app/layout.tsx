@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import { useEffect } from "react";
 import { Serwist } from "serwist";
-const inter = Inter({ subsets: ["latin"] });
+const inter = Open_Sans({
+  weight: ["400","500","600", "700","800"],
+  subsets: ["latin"],
+});
 
 const APP_NAME = "Hobbies";
 const APP_DEFAULT_TITLE = "Hobbies";

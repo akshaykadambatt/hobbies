@@ -7,6 +7,7 @@ import { Session } from "next-auth";
 import { getDexieUser, setDexieUser } from "@/utils/dexieUtils";
 import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
+import "@/app/globals.css";
 
 const User: React.FC = () => {
   const router = useRouter();
@@ -26,7 +27,7 @@ const User: React.FC = () => {
           setLocalUser(data);
         });
       });
-    }else{
+    } else {
       getDexieUser("1").then((data) => {
         console.log("set user from indexed");
         setLocalUser(data);
@@ -36,13 +37,19 @@ const User: React.FC = () => {
 
   return (
     <div>
-      {user?.image &&
-      <>
-      <Image src={user?.image||""} alt="logo" width={100} height={100} />
-      <div className="user">{user?.name}</div>
-      <a href="/api/auth/signout">Sign out</a>
-      </>
-      }
+      {user?.image && (
+        <div className="user-button">
+          <div className="user-image">
+            <Image src={user?.image || ""} alt="logo" width={45} height={45} />
+          </div>
+          <div className="hidden">
+            <div className="user-name">{user?.name}</div>
+            <a href="/api/auth/signout" className="button">
+              Sign out
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

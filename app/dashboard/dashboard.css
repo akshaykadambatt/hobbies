@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.header {
+  border: 1.5px solid #e6e6e685;
+  height: 59px;
+  margin: 15px 19px;
+  border-radius: 17px;
+  box-shadow: 0 0 10px 0px #c8c8c840;
+  margin-bottom: 22px;
+  padding: 9px 48px;
+  display: flex;
+align-items: flex-start;
+  justify-content: space-between;
+  position: sticky;
+}
+.group-one, .group-three {
+  display: flex;
+  align-items: center;
+  width:20%;
+}
+.group-three {
+  justify-content: flex-end;
+}
+.title {
+  margin-left: 15px;
+  font-size: 14px;
+}
+.group-two {
+  width: 60%;
+}
+.search {
+  width: 100%;
+  border-radius: 10px;
+    height: 50px;
+    padding:0 10px;
+  border: 1.5px solid #cccccc00;
+  transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+  overflow: hidden;
+}
+.search input {
+  border: 1.5px solid #e8e8e894;
+  background: #f4f4f485;
+  width: 100%;
+  padding: 6px 20px;
+  border-radius: 8px;
+  transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+  font-size: 14px;
+}
+.search-banner-true .search-input{
+  padding: 9px 20px;
+  font-size: 16px;
+  border: 1.5px solid #cececee8;
+  background: #eaeaead3;
+  outline: none;
+  
+}
+.search-banner-true{
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1.5px solid #cccccc50;
+height: 50vh;
+  max-height: 80vh;
+    opacity: 1;
+
+}
+  .search-banner{
+    transform:translateY(10px);
+  transition: all .2s;
+  transform-origin: top left;
+  height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  border: 1.5px solid #e5e3e300;
+  padding:5px;
+  margin-top:10px;
+  
+}
+.search-banner-true .search-banner {
+    transform:translateY(0px);
+    height: 50px;
+  opacity: 1;
+  background: #fff;
+  border-radius: 10px;
+  border: 1.5px solid #e5e3e36e;
+  
+}
+
+.search-input-container{
+  display: flex;
+}
+.search-input-container .close {
+  cursor: pointer;
+  height: inherit;
+  display: block;
+  display: flex;
+  position: relative;
+  transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+  height: 0px;
+  width:0px;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-banner-true .close {
+  width: 44px;
+  height: 45px;
+  opacity: 1;
+    
+
+}
+.user{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+}
