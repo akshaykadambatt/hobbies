@@ -20,6 +20,7 @@
 align-items: flex-start;
   justify-content: space-between;
   position: sticky;
+  z-index: 10;
 }
 .group-one, .group-three {
   display: flex;
@@ -44,6 +45,8 @@ align-items: flex-start;
   border: 1.5px solid #cccccc00;
   transition: padding .25s cubic-bezier(0.55, 0.17, 0.18, 0.79),height .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
   overflow: hidden;
+  position: relative;
+  z-index: 10;
 }
 .search input {
   border: 1.5px solid #e8e8e894;
@@ -69,6 +72,8 @@ align-items: flex-start;
 height: 60vh;
   max-height: 80vh;
   opacity: 1;
+  position: relative;
+  z-index: 100;
 
 }
   .search-banner{

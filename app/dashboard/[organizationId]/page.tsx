@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import "@/app/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
+import PageCard from "@/components/PageCard";
 const Dashboard: React.FC = () => {
   const [selectedId, setSelectedId] = useState<number>(0);
   const items = [
@@ -16,26 +17,28 @@ const Dashboard: React.FC = () => {
     { id: 5, title: "title 5", subtitle: "subtitle 5" },
   ];
   return (
-    <div className="page">
-      This is the organization content. list all pages here pages open as modals
-      <motion.div layoutId="i3">
-      <motion.h1 layoutId="33" className="text-2xl m-9">My thing</motion.h1>
-      <motion.div layoutId="333i" style={{borderRadius:"10px",height:"100px",width:"100px",border:"1.5px solid #000",margin:"10px 20px", display:"inline-block"}}>a</motion.div>
-      <motion.div layoutId="333ii" style={{borderRadius:"10px",height:"100px",width:"100px",border:"1.5px solid #000",margin:"10px 20px", display:"inline-block"}}>b</motion.div>
-      
-      <motion.div layoutId="i3i">
-        <Link href="/dashboard" className="button">
-        Go Back
-      </Link>
-      </motion.div>
-      
-      </motion.div>
-      {items.map((item) => (
+    <div className="page container organization">
+      <div className="heading mt-0">First Organization</div>
+      <div className="page-list">
+      <PageCard favouredSize="card" layoutId="item-1" stacked>lets goooo 1</PageCard>
+      <PageCard favouredSize="card" layoutId="item-2" stacked>lets goooo 2</PageCard>
+      <PageCard favouredSize="card" layoutId="item-3" stacked>lets goooo 3</PageCard>
+      <PageCard favouredSize="card">lets goooo</PageCard>
+      <PageCard favouredSize="card">lets goooo</PageCard>
+      <PageCard favouredSize="card">lets goooo</PageCard>
+      </div>
+      <div>
+        <div>
+          <Link href="/dashboard" className="button">
+            Go Back
+          </Link>
+        </div>
+      </div>
+      {/* {items.map((item) => (
         <motion.div
           layoutId={`${item.id}`}
           onClick={() => setSelectedId(item.id)}
         >
-          
           <motion.h5>{item.subtitle}</motion.h5>
           <motion.h2>{item.title}</motion.h2>
         </motion.div>
@@ -45,14 +48,13 @@ const Dashboard: React.FC = () => {
           <motion.div layoutId={`${selectedId}`}>
             <motion.h5>{items[selectedId].subtitle}</motion.h5>
             <motion.h2>{items[selectedId].title}</motion.h2>
-           
+
             <motion.button onClick={() => setSelectedId(0)}>
               close
             </motion.button>
           </motion.div>
         )}
-      </AnimatePresence>
-      
+      </AnimatePresence> */}
     </div>
   );
 };

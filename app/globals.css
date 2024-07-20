@@ -8,6 +8,11 @@
   }
 }
 
+@layer components {
+  .heading {
+    @apply text-2xl font-thin mt-5 ml-3;
+  }
+}
 .button {
   margin: 3px 5px;
   display: inline-block;
@@ -44,44 +49,78 @@
   background: #c72020;
 }
 
-.user-image{
+.user-image {
   width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    border: 1.5px solid #e6e6e6ab;
-    margin-right: 10px;
-  display:inline-block;
+  height: 40px;
+  border-radius: 40px;
+  border: 1.5px solid #e6e6e6ab;
+  margin-right: 10px;
+  display: inline-block;
   overflow: hidden;
 }
 
 .user-name {
   @apply text-sm;
-  display:inline-block
+  display: inline-block;
 }
 
 .hidden {
   display: none;
 }
-.user-button{
+.user-button {
   display: flex;
   align-items: center;
 }
 
-.fade-up{
-  animation: fade-up 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 forwards ;
+.fade-up {
+  animation: fade-up 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 forwards;
 }
 @-webkit-keyframes fade-up {
   0% {
     opacity: 0;
-    transform: translateY(-50px) scale(1.5);
-    transform-origin: right;
+    transform: translateY(50px) scale(1.5) matrix3d(1, 0, 0, 0, 0, 1, 0, 0.0003, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: top right;
   }
   20% {
     opacity: 0;
-    transform: translateY(-50px) scale(0.9);
+    transform: translateY(20px) scale(0.97) matrix3d(1, 0, 0, 0, 0, 1, 0, 0.0003, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: top right;
   }
   100% {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+.page-card {
+  @apply border border-gray-200 rounded-lg p-4 bg-red-500 inline-block;
+}
+
+.container {
+  @apply max-w-screen-xl mx-auto px-6;
+}
+.stacked-page-cards .stacked-page-card:nth-child(1){
+z-index: 3;
+    position: relative;}
+.stacked-page-cards .stacked-page-card:nth-child(2){
+    margin-left:-182px;
+    position: relative;
+    z-index: 2;
+    top: 17px;
+    opacity: .9;
+  
+}
+.stacked-page-cards .stacked-page-card:nth-child(3){
+    margin-left:-185px;
+    position: relative;
+    top: 32px;
+    opacity: .9;
+
+}
+.stacked-page-card:nth-child(1){z-index: 3  !important; position: relative;}
+.stacked-page-card:nth-child(2){z-index: 2 !important; position: relative;}
+.stacked-page-card:nth-child(3){z-index: 1 !important; position: relative;}
+.unstacked-page-card{
+  animation: fade-up 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 forwards;
+  transform-origin: 0%;
 }

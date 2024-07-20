@@ -48,7 +48,7 @@ const Search: React.FC = () => {
       {searchBanner && (
         <div className="search-banner-wrapper disable-scrollbars">
           <div className="delay-150 fade-up heading mt-5 text-2xl font-thin ml-3 animation-duration-[0.31s]">
-            Recents
+            26 Results
           </div>
           <motion.div
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ const Search: React.FC = () => {
                 "translateY(60px) scaley(0.8)  matrix3d(1, 0, 0, 0, 0, 1, 0, 0.001, 0, 0, 1, 0, 0, 0, 0, 1)",
             }}
             whileInView={{ opacity: 1, transform: "translateY(0px)" }}
-          ></motion.div>
+          >Text inside the box</motion.div>
           <motion.div
             viewport={{ once: true }}
             className="search-banner"
