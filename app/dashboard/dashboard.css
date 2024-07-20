@@ -42,7 +42,7 @@ align-items: flex-start;
     height: 50px;
     padding:0 10px;
   border: 1.5px solid #cccccc00;
-  transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+  transition: padding .25s cubic-bezier(0.55, 0.17, 0.18, 0.79),height .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
   overflow: hidden;
 }
 .search input {
@@ -52,6 +52,7 @@ align-items: flex-start;
   padding: 6px 20px;
   border-radius: 8px;
   transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+  margin-bottom: 10px;
   font-size: 14px;
 }
 .search-banner-true .search-input{
@@ -60,15 +61,14 @@ align-items: flex-start;
   border: 1.5px solid #cececee8;
   background: #eaeaead3;
   outline: none;
-  
 }
 .search-banner-true{
   background-color: #f9f9f9;
   padding: 10px;
   border: 1.5px solid #cccccc50;
-height: 50vh;
+height: 60vh;
   max-height: 80vh;
-    opacity: 1;
+  opacity: 1;
 
 }
   .search-banner{
@@ -81,11 +81,19 @@ height: 50vh;
   border: 1.5px solid #e5e3e300;
   padding:5px;
   margin-top:10px;
-  
+  width:21.9%;
+  margin-inline:10px;
+  display: inline-block;
+  cursor: pointer;
+}
+.search-banner:hover{
+  transform: scale(1.05) !important;
+  box-shadow:0px 0px 10px 0px #c8c8c817,0px 0px 2px 0px #c8c8c873;
+  transform-origin: center;
 }
 .search-banner-true .search-banner {
     transform:translateY(0px);
-    height: 50px;
+    height: 80px;
   opacity: 1;
   background: #fff;
   border-radius: 10px;
@@ -119,10 +127,58 @@ height: 50vh;
     
 
 }
+.search-banner-wrapper{
+  overflow-y: scroll;
+  height: 49vh;
+  border-radius: 10px;
+  overflow-x:hidden;
+}
+.disable-scrollbars::-webkit-scrollbar {
+}
 .user{
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
   transition: all .25s cubic-bezier(0.55, 0.17, 0.18, 0.79);
+}
+
+:root {
+  --scrollbar-bg: #f1f1f138;
+  --scrollbar-thumb: #88888843;
+  --scrollbar-thumb-hover: #5555553b;
+}
+
+.disable-scrollbars {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+  
+}
+
+.disable-scrollbars::-webkit-scrollbar {
+  width: 5px;
+}
+
+.disable-scrollbars::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+.disable-scrollbars::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+
+.disable-scrollbars::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.disable-scrollbars::-webkit-scrollbar-button {
+  display: none;
+}
+
+.heading{
+  position: sticky;
+  top:0;
+  z-index: 1;
+  text-shadow: 0 0 0 #000;
 }

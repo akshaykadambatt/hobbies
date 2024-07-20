@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const plugin = require('tailwindcss/plugin')
+import type { PluginAPI } from "tailwindcss/types/config";
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,17 +17,17 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(({ matchUtilities, theme }: { matchUtilities: any; theme: any }) => {
+    plugin(({ matchUtilities, theme }: { matchUtilities: PluginAPI["matchUtilities"]; theme: PluginAPI["theme"] }) => {
       matchUtilities(
         {
-          "animation-delay": (value: any) => {
+          "animation-duration": (value: string) => {
             return {
-              "animation-delay": value,
+              "animation-duration": `${value} !important`,
             };
           },
         },
         {
-          values: theme("transitionDelay"),
+          values: theme("transitionDuration"),
         }
       );
     }),

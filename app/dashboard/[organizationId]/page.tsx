@@ -23,6 +23,7 @@ const Dashboard: React.FC = () => {
           layoutId={`${item.id}`}
           onClick={() => setSelectedId(item.id)}
         >
+          
           <motion.h5>{item.subtitle}</motion.h5>
           <motion.h2>{item.title}</motion.h2>
         </motion.div>
@@ -32,6 +33,7 @@ const Dashboard: React.FC = () => {
           <motion.div layoutId={`${selectedId}`}>
             <motion.h5>{items[selectedId].subtitle}</motion.h5>
             <motion.h2>{items[selectedId].title}</motion.h2>
+           
             <motion.button onClick={() => setSelectedId(0)}>
               close
             </motion.button>
