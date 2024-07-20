@@ -18,6 +18,18 @@ const Dashboard: React.FC = () => {
   return (
     <div className="page">
       This is the organization content. list all pages here pages open as modals
+      <motion.div layoutId="i3">
+      <motion.h1 layoutId="33" className="text-2xl m-9">My thing</motion.h1>
+      <motion.div layoutId="333i" style={{borderRadius:"10px",height:"100px",width:"100px",border:"1.5px solid #000",margin:"10px 20px", display:"inline-block"}}>a</motion.div>
+      <motion.div layoutId="333ii" style={{borderRadius:"10px",height:"100px",width:"100px",border:"1.5px solid #000",margin:"10px 20px", display:"inline-block"}}>b</motion.div>
+      
+      <motion.div layoutId="i3i">
+        <Link href="/dashboard" className="button">
+        Go Back
+      </Link>
+      </motion.div>
+      
+      </motion.div>
       {items.map((item) => (
         <motion.div
           layoutId={`${item.id}`}
@@ -40,9 +52,7 @@ const Dashboard: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <Link href="/dashboard" className="button">
-        Go Back
-      </Link>
+      
     </div>
   );
 };
