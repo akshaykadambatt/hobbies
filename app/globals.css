@@ -20,6 +20,7 @@
     transition: all 0.047s;
     color: #1f1f1f;
     font-weight: 500;
+    cursor: pointer;
   }
   .heading {
     @apply text-2xl font-thin mt-5 ml-3;
@@ -37,15 +38,13 @@
 }
 
 .red-button {
+  @apply text-white bg-red-600;
   border: 1.5px solid #bc2f2f;
-  color: #ffffff;
-  background: #e33737;
 }
 
 .red-button:hover {
+  @apply bg-red-700;
   border: 1.5px solid #9d0b0b;
-  color: #ffffff;
-  background: #c72020;
 }
 
 .user-image {
@@ -92,8 +91,9 @@
 }
 
 .page-card {
-  @apply border border-gray-200 rounded-lg p-6 pb-3 m-2 inline-block ;
+  @apply border border-gray-200 rounded-lg p-6 pb-3 m-2 inline-block;
   font-weight: 300;
+  cursor: pointer;
   overflow: hidden;
 }
 
@@ -135,7 +135,8 @@ z-index: 3;
   left:20%;
   border-radius: 20px;
   padding:20px 20px;
-  box-shadow: 0 0 30px 0 #0000001f;
+  box-shadow: 0 0 30px 5px #0000001f;
+  border: 2px solid #d1d1d1;
 }
 .modal-backdrop {
   height:100vh;

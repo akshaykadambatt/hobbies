@@ -12,7 +12,13 @@ import { IoClose } from "react-icons/io5";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { ReactNode } from "react";
 import { FaArrowRightLong, FaRegWindowMinimize } from "react-icons/fa6";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import {
+  IoIosArrowRoundForward,
+  IoIosClose,
+  IoIosExpand,
+  IoIosRemove,
+  IoMdExpand,
+} from "react-icons/io";
 import { FiMaximize } from "react-icons/fi";
 interface PageCardProps {
   children: ReactNode;
@@ -124,33 +130,33 @@ const PageCard: React.FC<PageCardProps> = ({
               exit={{ opacity: 0 }}
               className="modal-overlay"
               style={{
-                background: `linear-gradient(${color} 10%,#fff 90%)`,
+                background: `linear-gradient(${color} -10%,#fff 30%)`,
               }}
             >
               <div
-                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+                className={`button ml-0 bg-[${color}]`}
                 style={{
-                  padding: "11px 18px 23px",
+                  padding: "8px",
                 }}
               >
-                <FaRegWindowMinimize size={27} />
+                <IoIosRemove size={45} />
               </div>
               <div
-                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+                className={`button ml-0 bg-[${color}]`}
                 style={{
-                  padding: "14px 21px 16px",
+                  padding: "17px",
                 }}
               >
-                <FiMaximize size={30} />
+                <IoMdExpand size={27} />
               </div>
               <div
-                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+                className={`button ml-0 bg-[${color}]`}
                 style={{
-                  padding: "13px 18px 13px",
+                  padding: "8px",
                 }}
                 onClick={() => setIsModalOpen(false)}
               >
-                <IoClose size={35} />
+                <IoIosClose size={45} />
               </div>
               <motion.div
                 layoutId={`${layoutId}-heading`}
@@ -158,16 +164,16 @@ const PageCard: React.FC<PageCardProps> = ({
               >
                 My page
               </motion.div>
-              <br></br> {children} <br></br>
-              <motion.div
-                layoutId={`${layoutId}-button`}
-                className={`button ml-0 px-3 py-2 bg-[${color}]`}
-              >
-                <IoIosArrowRoundForward size={30} />
-              </motion.div>
-              
+              <div className="mb-9"></div>
+              {children}
+              <div className="mb-9"></div>
+              <div className="button red-button">Delete</div>
+              <div className="button">Autosave</div>
+              <div className="button">Pin to top</div>
+              <div className="button">Save</div>
             </motion.div>
             <motion.div
+              onClick={() => setIsModalOpen(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
