@@ -20,9 +20,17 @@ const Dashboard: React.FC = () => {
       <div className="heading mt-8">Organization One</div>
       <Link href="/dashboard/a" shallow>
       <div className="stacked-page-cards mt-6">
-      <PageCard favouredSize="card" layoutId="item-1" stacked={true} color="#8684FF">lets goooo 1</PageCard>
-      <PageCard favouredSize="card" layoutId="item-2" stacked={true} color="#ECFF79">lets goooo 2</PageCard>
-      <PageCard favouredSize="card" layoutId="item-3" stacked={true} color="#80E0FF">lets goooo 3</PageCard>
+      <PageCard favouredSize="card" layoutId="item-1" stacked={true} inStack color="rgb(237, 246, 125)">lets goooo 1</PageCard>
+      <PageCard favouredSize="card" layoutId="item-2" stacked={true} inStack color="rgb(242, 91, 226)">lets goooo 2</PageCard>
+      <PageCard favouredSize="card" layoutId="item-3" stacked={true} inStack color="#ffc879">lets goooo 3</PageCard>
+      </div>
+      </Link>
+      <div className="heading mt-10">Organization Two</div>
+      <Link href="/dashboard/a" shallow>
+      <div className="stacked-page-cards mt-6">
+      <PageCard favouredSize="card" stacked={true} inStack color="rgb(243, 75, 75)">lets goooo 1</PageCard>
+      <PageCard favouredSize="card" stacked={true} inStack color="rgb(98, 255, 135)">lets goooo 2</PageCard>
+      <PageCard favouredSize="card" stacked={true} inStack color="rgb(128, 224, 255)">lets goooo 3</PageCard>
       </div>
       </Link>
       <div className="mb-9"></div>

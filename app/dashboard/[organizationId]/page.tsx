@@ -21,21 +21,21 @@ const Dashboard: React.FC = () => {
       <div className="heading mt-0">First Organization</div>
       <div className="mt-0 ml-3 mt-3 text-sm">Created on Jan 26th. No timestamp available.</div>
       <div className="page-list mt-3">
-      <PageCard favouredSize="card" layoutId="item-1" stacked color="#EDF67D">lets goooo 1</PageCard>
-      <PageCard favouredSize="card" layoutId="item-2" stacked color="#CA7DF9">lets goooo 2</PageCard>
-      <PageCard favouredSize="card" layoutId="item-3" stacked color="#724CF9">lets goooo 3</PageCard>
-      <PageCard favouredSize="card" color="#F34B4B">lets goooo</PageCard>
-      <PageCard favouredSize="card" color="#101419">lets goooo</PageCard>
-      <PageCard favouredSize="card" color="#80E0FF">lets goooo</PageCard>
+      <PageCard favouredSize="card" layoutId="item-1" stacked color="rgb(237, 246, 125)">lets goooo 1</PageCard>
+      <PageCard favouredSize="card" layoutId="item-2" stacked color="rgb(242, 91, 226)">lets goooo 2</PageCard>
+      <PageCard favouredSize="card" layoutId="item-3" stacked color="#ffc879">lets goooo 3</PageCard>
+      <PageCard favouredSize="card" color="rgb(243, 75, 75)">lets goooo</PageCard>
+      <PageCard favouredSize="card" color="rgb(98, 255, 135)">lets goooo</PageCard>
+      <PageCard favouredSize="card" color="rgb(128, 224, 255)">lets goooo</PageCard>
       </div>
       <div className="heading mt-7">First Organization</div>
       <div className="page-list mt-3">
-      <PageCard favouredSize="card" color="#EDF67D">lets goooo 1</PageCard>
-      <PageCard favouredSize="card" color="#CA7DF9">lets goooo 2</PageCard>
-      <PageCard favouredSize="card" color="#724CF9">lets goooo 3</PageCard>
-      <PageCard favouredSize="card" color="#F34B4B">lets goooo</PageCard>
-      <PageCard favouredSize="card" color="#101419">lets goooo</PageCard>
-      <PageCard favouredSize="card" color="#80E0FF">lets goooo</PageCard>
+      <PageCard favouredSize="card" color="rgb(237, 246, 125)">lets goooo 1</PageCard>
+      <PageCard favouredSize="card" color="rgb(242, 91, 226)">lets goooo 2</PageCard>
+      <PageCard favouredSize="card" color="#ffc879">lets goooo 3</PageCard>
+      <PageCard favouredSize="card" color="rgb(243, 75, 75)">lets goooo</PageCard>
+      <PageCard favouredSize="card" color="rgb(98, 255, 135)">lets goooo</PageCard>
+      <PageCard favouredSize="card" color="rgb(128, 224, 255)">lets goooo</PageCard>
       </div>
       <div>
         <div>
