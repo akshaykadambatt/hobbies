@@ -11,8 +11,9 @@ import "@/app/globals.css";
 import { IoClose } from "react-icons/io5";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { ReactNode } from "react";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaRegWindowMinimize } from "react-icons/fa6";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { FiMaximize } from "react-icons/fi";
 interface PageCardProps {
   children: ReactNode;
   favouredSize?: "icon" | "card";
@@ -74,7 +75,7 @@ const PageCard: React.FC<PageCardProps> = ({
           position: "relative",
         }}
         onClick={() => {
-          if(!inStack) {
+          if (!inStack) {
             setIsModalOpen(true);
           }
         }}
@@ -95,39 +96,85 @@ const PageCard: React.FC<PageCardProps> = ({
         }}
         layoutId={layoutId || ""}
       >
-        <motion.div layoutId={`${layoutId}-heading`} className="text-xl mb-3 font-normal">My page</motion.div> {children}
+        <motion.div
+          layoutId={`${layoutId}-heading`}
+          className="text-xl mb-3 font-normal"
+        >
+          My page
+        </motion.div>{" "}
+        {children}
         <div className="mb-3 text-sm">
           I have a lot of text inside me im sorrry that im so fat ill try my
           best to not be this fat again
         </div>
-        <motion.div layoutId={`${layoutId}-button`} className="button ml-0 px-3 py-2 bg-white white">
+        <motion.div
+          layoutId={`${layoutId}-button`}
+          className="button ml-0 px-3 py-2 bg-white white"
+        >
           <IoIosArrowRoundForward size={30} />
         </motion.div>
       </motion.div>
       <AnimatePresence>
-        {isModalOpen && (<>
-          <motion.div
-          layoutId={layoutId || ""}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="modal-overlay"
-            style={{
-              background: `linear-gradient(${color} 10%,#fff 90%)`,
-            }}
-          >
-            {/* Your modal content */}
-            <button onClick={() => setIsModalOpen(false)}>Close</button>
-        <motion.div layoutId={`${layoutId}-heading`} className="heading mb-3 font-normal">My page</motion.div>
-        <br></br> {children} <br></br>
-        <motion.div layoutId={`${layoutId}-button`} className={`button ml-0 px-3 py-2 bg-[${color}]`}>
-          <IoIosArrowRoundForward size={30} />
-        </motion.div>
-        </motion.div>
-          <motion.div initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} className="modal-backdrop"></motion.div>
-        </>)}
+        {isModalOpen && (
+          <>
+            <motion.div
+              layoutId={layoutId || ""}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="modal-overlay"
+              style={{
+                background: `linear-gradient(${color} 10%,#fff 90%)`,
+              }}
+            >
+              <div
+                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+                style={{
+                  padding: "11px 18px 23px",
+                }}
+              >
+                <FaRegWindowMinimize size={27} />
+              </div>
+              <div
+                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+                style={{
+                  padding: "14px 21px 16px",
+                }}
+              >
+                <FiMaximize size={30} />
+              </div>
+              <div
+                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+                style={{
+                  padding: "13px 18px 13px",
+                }}
+                onClick={() => setIsModalOpen(false)}
+              >
+                <IoClose size={35} />
+              </div>
+              <motion.div
+                layoutId={`${layoutId}-heading`}
+                className="heading mb-3 font-normal"
+              >
+                My page
+              </motion.div>
+              <br></br> {children} <br></br>
+              <motion.div
+                layoutId={`${layoutId}-button`}
+                className={`button ml-0 px-3 py-2 bg-[${color}]`}
+              >
+                <IoIosArrowRoundForward size={30} />
+              </motion.div>
+              
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="modal-backdrop"
+            ></motion.div>
+          </>
+        )}
       </AnimatePresence>
     </>
   );

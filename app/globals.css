@@ -21,14 +21,10 @@
     color: #1f1f1f;
     font-weight: 500;
   }
-}
-@layer components {
   .heading {
     @apply text-2xl font-thin mt-5 ml-3;
   }
-
 }
-
 
 .button:hover {
   border: 1.5px solid #d6d6d6ec;
@@ -98,6 +94,7 @@
 .page-card {
   @apply border border-gray-200 rounded-lg p-6 pb-3 m-2 inline-block ;
   font-weight: 300;
+  overflow: hidden;
 }
 
 .container {
