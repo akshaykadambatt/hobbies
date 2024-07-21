@@ -7,25 +7,28 @@
     text-wrap: balance;
   }
 }
-
+@layer components {
+  .button {
+    margin: 3px 5px;
+    display: inline-block;
+    border-radius: 27px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255);
+    padding: 8px 17px;
+    border: 1.5px solid #e6e6e6ab;
+    font-size: 14px;
+    transition: all 0.047s;
+    color: #1f1f1f;
+    font-weight: 500;
+  }
+}
 @layer components {
   .heading {
     @apply text-2xl font-thin mt-5 ml-3;
   }
+
 }
-.button {
-  margin: 3px 5px;
-  display: inline-block;
-  border-radius: 27px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255);
-  padding: 8px 17px;
-  border: 1.5px solid #e6e6e6ab;
-  font-size: 14px;
-  transition: all 0.047s;
-  color: #1f1f1f;
-  font-weight: 500;
-}
+
 
 .button:hover {
   border: 1.5px solid #d6d6d6ec;
@@ -93,7 +96,8 @@
 }
 
 .page-card {
-  @apply border border-gray-200 rounded-lg p-4 bg-red-500 inline-block;
+  @apply border border-gray-200 rounded-lg p-6 pb-3 m-2 inline-block ;
+  font-weight: 300;
 }
 
 .container {
@@ -103,7 +107,7 @@
 z-index: 3;
     position: relative;}
 .stacked-page-cards .stacked-page-card:nth-child(2){
-    margin-left:-182px;
+    margin-left:-332px;
     position: relative;
     z-index: 2;
     top: 17px;
@@ -111,7 +115,7 @@ z-index: 3;
   
 }
 .stacked-page-cards .stacked-page-card:nth-child(3){
-    margin-left:-185px;
+    margin-left:-335px;
     position: relative;
     top: 32px;
     opacity: .9;

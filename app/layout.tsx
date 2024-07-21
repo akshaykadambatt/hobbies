@@ -6,7 +6,7 @@ import store from "./store/store";
 import { useEffect } from "react";
 import { Serwist } from "serwist";
 const inter = Open_Sans({
-  weight: ["400","500","600", "700","800"],
+  weight: ["300","400","500","600", "700","800"],
   subsets: ["latin"],
 });
 

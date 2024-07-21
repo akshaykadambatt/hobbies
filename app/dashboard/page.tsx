@@ -14,56 +14,25 @@ const Dashboard: React.FC = () => {
   const router = useRouter();
   return (
     <div className="page container dashboard">
-      <div className="heading mt-0">Hi, Akshay</div>
+      <div className="heading mt-8">Hi, Akshay</div>
+      <div className="mt-0 ml-3 mt-3 text-sm">Created on Jan 26th. No timestamp available.I have a lot of text inside me im sorrry that im so fat ill try
+      my best to not be this fat again</div>
+      <div className="heading mt-8">Organization One</div>
       <Link href="/dashboard/a" shallow>
-      <div className="stacked-page-cards">
-      <PageCard favouredSize="card" layoutId="item-1" stacked={true}>lets goooo 1</PageCard>
-      <PageCard favouredSize="card" layoutId="item-2" stacked={true}>lets goooo 2</PageCard>
-      <PageCard favouredSize="card" layoutId="item-3" stacked={true}>lets goooo 3</PageCard>
+      <div className="stacked-page-cards mt-6">
+      <PageCard favouredSize="card" layoutId="item-1" stacked={true} color="#8684FF">lets goooo 1</PageCard>
+      <PageCard favouredSize="card" layoutId="item-2" stacked={true} color="#ECFF79">lets goooo 2</PageCard>
+      <PageCard favouredSize="card" layoutId="item-3" stacked={true} color="#80E0FF">lets goooo 3</PageCard>
       </div>
       </Link>
-      
-      <ul>
-        <li>
-          list of organizations
-          <motion.div layoutId="i3">
-            <motion.h1 layoutId="33">My thing</motion.h1>
-            <motion.div
-              layoutId="333i"
-              style={{
-                borderRadius: "10px",
-                height: "100px",
-                width: "100px",
-                border: "1.5px solid #000",
-                display: "inline-block",
-              }}
-            >
-              a
-            </motion.div>
-            <motion.div
-              layoutId="333ii"
-              style={{
-                borderRadius: "10px",
-                height: "100px",
-                width: "100px",
-                border: "1.5px solid #000",
-                marginLeft: "-50px",
-                display: "inline-block",
-              }}
-            >
-              b
-            </motion.div>
-            <motion.div layoutId="i3i">
-              <Link href="/dashboard/a" shallow className="button">
+      <div className="mb-9"></div>
+      <Link href="/dashboard/a" shallow className="button">
                 Open this Organization
               </Link>
-            </motion.div>
-          </motion.div>
-          <Link href="/dashboard/a" shallow className="button red-button">
+              <Link href="/dashboard/a" shallow className="button red-button">
             Delete!
           </Link>
-        </li>
-      </ul>
+      
     </div>
   );
 };

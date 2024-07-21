@@ -11,7 +11,7 @@ import "@/app/globals.css";
 import { IoClose } from "react-icons/io5";
 import { motion, useAnimation } from "framer-motion";
 import { ReactNode } from "react";
-
+import { FaArrowRightLong } from "react-icons/fa6";
 interface PageCardProps {
   children: ReactNode;
   favouredSize?: "icon" | "card";
@@ -19,6 +19,7 @@ interface PageCardProps {
   highlightedBlock?: "string";
   layoutId?: string;
   stacked?: boolean;
+  color?: string;
 }
 const PageCard: React.FC<PageCardProps> = ({
   children,
@@ -27,6 +28,7 @@ const PageCard: React.FC<PageCardProps> = ({
   highlightedBlock,
   layoutId,
   stacked,
+  color
 }) => {
   const [searchBanner, setSearchBanner] = useState(false);
   const controls = useAnimation();
@@ -71,9 +73,12 @@ const PageCard: React.FC<PageCardProps> = ({
       dragConstraints={{ left: -300, right: 300, top: -100, bottom: 300 }}
       dragElastic={0.09}
       dragSnapToOrigin={!searchBanner}
-      className={`page-card mx-1 my-1 w-full sm:w-[200px] ${
+      className={`page-card p-5 mx-1 pb-2 my-1 w-full sm:w-[370px] ${
         stacked ? "stacked-page-card" : "unstacked-page-card"
       }`}
+      style={{
+        background:color
+      }}
       whileHover={{
         scale: 1.05,
         transition: { duration: 0.1 },
@@ -81,8 +86,13 @@ const PageCard: React.FC<PageCardProps> = ({
       }}
       layoutId={layoutId || ""}
     >
-      {children}I have a lot of text inside me im sorrry that im so fat ill try
-      my best to not be this fat again. So, sorry my mate, im very sorry.
+      <div className="text-xl mb-3 font-normal">My page</div>      {children}
+      <div className="mb-3 text-sm">
+
+      I have a lot of text inside me im sorrry that im so fat ill try
+      my best to not be this fat again
+      </div>
+      <div className="button ml-0 py-3 bg-white/[.9]"><FaArrowRightLong size={20} /></div>
     </motion.div>
   );
 };
